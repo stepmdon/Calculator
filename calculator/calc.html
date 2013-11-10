@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<script type="text/javascript" src="../js/calc.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/calc.css"/>
+
+<title>Roofing Calculator</title>
+</head>
+
+<body>
+	<h2> ROOFING CALCULATOR</h2>
+	<div class =  "case">
+    
+    	<div class = "display"><input type = "text" readonly="readonly" size="18" id = "dis" /></div>
+        <!--/display-->
+        <div class = "btns">
+        	<p><input type = "button" class = "brown button"   value = "Pitch" onclick = 'text("Pitch")' />
+               <input type = "button" class = "brown button"   value = "Rise"  onclick = 'text("Rise")' />
+               <input type = "button" class = "brown button"   value = "Run"  onclick = 'text("Run")' />
+               <input type = "button" class = "brown button"   value = "Hip"   onclick = 'text("Hip/V")' /></p>
+            
+        	<p><input type = "button" class = "gray button"   value = "mrc" onclick = 'text("")' />
+               <input type = "button" class = "gray button"   value = "m-"  onclick = 'text("")' />
+               <input type = "button" class = "gray button"   value = "m+"  onclick = 'text("")' />
+               <input type = "button" class = "red button"    value = "/"   onclick = 'numeric("/")' /></p>
+               
+            <p><input type = "button" class = "black button"  value = "7" onclick = 'numeric("7")' />
+               <input type = "button" class = "black button"  value = "8" onclick = 'numeric("8")' />
+               <input type = "button" class = "black button"  value = "9" onclick = 'numeric("9")' />
+               <input type = "button" class = "red button"    value = "*" onclick = 'numeric("*")' /></p>
+               
+            <p><input type = "button" class = "black button"  value = "4" onclick = 'numeric("4")' />
+               <input type = "button" class = "black button"  value = "5" onclick = 'numeric("5")' />
+               <input type = "button" class = "black button"  value = "6" onclick = 'numeric("6")' />
+               <input type = "button" class = "red button"    value = "-" onclick = 'numeric("-")' /></p>
+               
+            <p><input type = "button" class = "black button"  value = "1" onclick = 'numeric("1")' />
+               <input type = "button" class = "black button"  value = "2" onclick = 'numeric("2")' />
+               <input type = "button" class = "black button"  value = "3" onclick = 'numeric("3")' />
+               <input type = "button" class = "red button"    value = "+" onclick = 'numeric("+")' /></p>
+               
+            <p><input type = "button" class = "black button"  value = "0" onclick = 'numeric("0")' />
+               <input type = "button" class = "black button"  value = "." onclick = 'numeric(".")' />
+               <input type = "button" class = "black button"  value = "C" onclick = 'text("")' />
+               <input type = "button" class = "orange button" value = "=" onclick = 'equals()'/>                   	
+        </div><!--/btns-->
+    </div><!--/case-->
+    
+    <div class = "cuttingList">
+    	<div class = "pitch">
+        	<div class="pitchText">
+            	<h3>Pitch</h3>
+            </div>
+        </div><!--/pitch-->
+    	
+    </div><!--/cuttingList-->
+    
+</body>
+</html>

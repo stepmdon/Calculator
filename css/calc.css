@@ -1,0 +1,172 @@
+/* CSS Document */
+body
+{
+	background-color:tan;
+}
+h2
+{
+	text-align:center;	
+	line-height:1em; 
+	font-size:3em; font-weight:bold;
+    color:#808080;
+    text-shadow:#fff 0px 1px 0, #000 0 -1px 0;
+}
+p
+{
+	line-height:10px;
+}
+.case
+{
+	position:relative;
+	top:10px;
+	margin-left:27%;
+	background-color:#808080;
+	height:360px;
+	width:250px;
+	border-radius:12px;
+	float:left;
+}
+.display
+{
+	position:relative;
+	background-color:#222;
+	width:220px;
+	top:20px;
+	left:15px;
+	height:46px;
+}
+.display input
+{
+	position:relative;
+	top:2px;
+	left:2px;
+	background-color:#bccd95;
+	height:35px;
+	width:212px;
+	color:#000;
+	font-size:21px;
+	text-align:right;
+}
+.btns
+{
+	position:relative;
+	margin-top:35px;
+}
+.button
+{
+	width:40px;
+	height:30px;
+	border:none;
+	border-radius:8px;
+	margin-left:16px;
+	border-top:2px solid transparent;
+}
+.brown.button
+{
+	color:#FFF;
+	background-color:#964514;
+	border-bottom:#000 3px solid;
+	border-top:#964514 3px solid;
+}
+.brown:active
+{
+	border-top:#000 3px solid;
+	border-bottom:#964514 3px solid;
+}
+
+.gray.button
+{
+	color:#FFF;
+	background-color:#6f6f6f;
+	border-bottom:#000 3px solid;
+	border-top:#6f6f6f 3px solid;
+}
+.gray:active
+{
+	border-top:#000 3px solid;
+	border-bottom:#6f6f6f 3px solid;
+}
+.red.button
+{
+	color:#000;
+	background-color:#ff4561;
+	border-bottom:#000 3px solid;
+	border-top:#ff4561 3px solid;
+}
+
+.red:active
+{
+	border-top:#000 3px solid;
+	border-bottom:#ff4561 3px solid;
+}
+.black.button
+{
+	color:#FFF;
+	background-color:#303030;
+	border-bottom:#000 3px solid;
+	border-top:#303030 3px solid;
+}
+
+.black:active
+{
+	border-top:#000 3px solid;
+	border-bottom:#303030 3px solid;
+}
+
+.orange.button
+{
+	color:#000;
+	background-color:#ff9933;
+	border-bottom:#000 3px solid;
+	border-top:#ff9933;
+}
+
+.orange:active
+{
+	border-top:#000 3px solid;
+	border-bottom:#ff9933 3px solid;
+}
+
+
+.cuttingList
+{
+	position:relative;
+	top:10px;
+	background-color:#808080;
+	height:360px;
+	width:350px;
+	border-radius:12px;
+	float:left;
+	margin-left:5%;
+	
+}
+
+.pitch
+{
+	position:relative;
+	margin: 25px 30px 0px 30px;
+	height:35px;
+	width:30px
+	color:#FFF;
+	background-color:#964514;
+	border-radius:10px;
+}
+.pitchText
+{
+	/*position:relative;*/
+	height:15px;
+	color:#FFF;
+	text-align:left;
+	padding-left:23px;
+	padding-top:1px;
+
+	background-color:#000;
+	z-index:2;
+}
+
+	
+	
+
+	
+	
+
