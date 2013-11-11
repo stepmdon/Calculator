@@ -16,45 +16,59 @@
     	<div class = "display"><input type = "text" readonly="readonly" size="18" id = "dis" /></div>
         <!--/display-->
         <div class = "btns">
-        	<p><input type = "button" class = "brown button"   value = "Pitch" onclick = 'text("Pitch")' />
-               <input type = "button" class = "brown button"   value = "Rise"  onclick = 'text("Rise")' />
-               <input type = "button" class = "brown button"   value = "Run"  onclick = 'text("Run")' />
-               <input type = "button" class = "brown button"   value = "Hip"   onclick = 'text("Hip/V")' /></p>
+        	<p><input type = "button" class = "brown button"   value = "Pitch" onclick = "calc.pitch('Pitch')" />
+               <input type = "button" class = "brown button"   value = "Rise"  onclick = "calc.rise('Rise')" />
+               <input type = "button" class = "brown button"   value = "Run"   onclick = "calc.run('Run')" />
+               <input type = "button" class = "brown button"   value = "Hip"   onclick = "calc.hipRafter('Hip/V')" /></p>
             
-        	<p><input type = "button" class = "gray button"   value = "mrc" onclick = 'text("")' />
-               <input type = "button" class = "gray button"   value = "m-"  onclick = 'text("")' />
-               <input type = "button" class = "gray button"   value = "m+"  onclick = 'text("")' />
-               <input type = "button" class = "red button"    value = "/"   onclick = 'numeric("/")' /></p>
+        	<p><input type = "button" class = "brown button"   value = "C.R" onclick = "calc.commonRafter('C.R')" />
+               <input type = "button" class = "brown button"   value = "J.R"  onclick = "calc.jackRafter('J.R')" />
+               <input type = "button" class = "blue button"   value = "Conv"  onclick = "calc.text('')" />
+               <input type = "button" class = "red button"    value = "/"   onclick = "calc.numeric('/')" /></p>
                
-            <p><input type = "button" class = "black button"  value = "7" onclick = 'numeric("7")' />
-               <input type = "button" class = "black button"  value = "8" onclick = 'numeric("8")' />
-               <input type = "button" class = "black button"  value = "9" onclick = 'numeric("9")' />
-               <input type = "button" class = "red button"    value = "*" onclick = 'numeric("*")' /></p>
+            <p><input type = "button" class = "black button"  value = "7" onclick = "calc.numeric('7')" />
+               <input type = "button" class = "black button"  value = "8" onclick = "calc.numeric('8')" />
+               <input type = "button" class = "black button"  value = "9" onclick = "calc.numeric('9')"/>     
+               <input type = "button" class = "red button"    value = "*" onclick = "calc.numeric('*')" /></p>
+             
                
-            <p><input type = "button" class = "black button"  value = "4" onclick = 'numeric("4")' />
-               <input type = "button" class = "black button"  value = "5" onclick = 'numeric("5")' />
-               <input type = "button" class = "black button"  value = "6" onclick = 'numeric("6")' />
-               <input type = "button" class = "red button"    value = "-" onclick = 'numeric("-")' /></p>
+            <p><input type = "button" class = "black button"  value = "4" onclick = "calc.numeric('4')" />
+               <input type = "button" class = "black button"  value = "5" onclick = "calc.numeric('5')" />
+               <input type = "button" class = "black button"  value = "6" onclick = "calc.numeric('6')" />
+               <input type = "button" class = "red button"    value = "-" onclick = "calc.numeric('-')" /></p>
                
-            <p><input type = "button" class = "black button"  value = "1" onclick = 'numeric("1")' />
-               <input type = "button" class = "black button"  value = "2" onclick = 'numeric("2")' />
-               <input type = "button" class = "black button"  value = "3" onclick = 'numeric("3")' />
-               <input type = "button" class = "red button"    value = "+" onclick = 'numeric("+")' /></p>
+            <p><input type = "button" class = "black button"  value = "1" onclick = "calc.numeric('1')" />
+               <input type = "button" class = "black button"  value = "2" onclick = "calc.numeric('2')" />
+               <input type = "button" class = "black button"  value = "3" onclick = "calc.numeric('3')" />
+               <input type = "button" class = "red button"    value = "+" onclick = "calc.numeric('+')" /></p>
                
-            <p><input type = "button" class = "black button"  value = "0" onclick = 'numeric("0")' />
-               <input type = "button" class = "black button"  value = "." onclick = 'numeric(".")' />
-               <input type = "button" class = "black button"  value = "C" onclick = 'text("")' />
-               <input type = "button" class = "orange button" value = "=" onclick = 'equals()'/>                   	
+            <p><input type = "button" class = "black button"  value = "0" onclick = "calc.numeric('0')" />
+               <input type = "button" class = "black button"  value = "." onclick = "calc.numeric('.')" />
+               <input type = "button" class = "black button"  value = "C" onclick = "calc.text('')" />
+               <input type = "button" class = "orange button" value = "=" onclick = "calc.equals()"/>                   	
         </div><!--/btns-->
     </div><!--/case-->
     
     <div class = "cuttingList">
-    	<div class = "pitch">
-        	<div class="pitchText">
-            	<h3>Pitch</h3>
-            </div>
-        </div><!--/pitch-->
-    	
+    	     	                  
+    	<div class="pitchdisplay"><input type = "text" readonly="readonly" size="18" id = "pitchDis" />
+        </div><!--/pitchdisplay--> 
+        
+        <div class="risedisplay"><input type = "text" readonly="readonly" size="18" id = "riseDis" />
+        </div><!--/risedisplay--> 
+        
+        <div class="rundisplay"><input type = "text" readonly="readonly" size="18" id = "runDis" />
+        </div><!--/rundisplay--> 
+        
+        <div class="crdisplay"><input type = "text" readonly="readonly" size="18" id = "crDis" />
+        </div><!--/crdisplay--> 
+        
+        <div class="jrdisplay"><input type = "text" readonly="readonly" size="18" id = "jrDis" />
+        </div><!--/jrdisplay--> 
+        
+        <div class="hipdisplay"><input type = "text" readonly="readonly" size="18" id = "hipDis" />
+        </div><!--/hipdisplay-->
+    	 
     </div><!--/cuttingList-->
     
 </body>
