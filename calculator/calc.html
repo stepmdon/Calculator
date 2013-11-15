@@ -16,9 +16,9 @@
     	<div class = "display"><input type = "text" readonly="readonly" size="18" id = "dis" /></div>
         <!--/display-->
         <div class = "btns">
-        	<p><input type = "button" class = "brown button"   value = "Pitch" onclick = "calc.pitch('Pitch')" />
-               <input type = "button" class = "brown button"   value = "Rise"  onclick = "calc.rise('Rise')" />
-               <input type = "button" class = "brown button"   value = "Run"   onclick = "calc.run('Run')" />
+        	<p><input type = "button" class = "brown button"   value = "Pitch" onclick = "calc.getPitch('Pitch')" />
+               <input type = "button" class = "brown button"   value = "Rise"  onclick = "calc.getRise('Rise')" />
+               <input type = "button" class = "brown button"   value = "Run"   onclick = "calc.getRun('Run')" />
                <input type = "button" class = "brown button"   value = "Hip"   onclick = "calc.hipRafter('Hip/V')" /></p>
             
         	<p><input type = "button" class = "brown button"   value = "C.R" onclick = "calc.commonRafter('C.R')" />
@@ -50,26 +50,32 @@
     </div><!--/case-->
     
     <div class = "cuttingList">
-    	     	                  
-    	<div class="pitchdisplay"><input type = "text" readonly="readonly" size="18" id = "pitchDis" />
+    	 <FORM NAME="mainform">
+            	                  
+    	<div class="pitchdisplay"><input type = "text" name="pitchDisp" readonly="readonly" size="18" id = "pitchDis" />
         </div><!--/pitchdisplay--> 
         
-        <div class="risedisplay"><input type = "text" readonly="readonly" size="18" id = "riseDis" />
+        <div class="risedisplay"><input type = "text" name="riseDisp" readonly="readonly" size="18" id = "riseDis" />
         </div><!--/risedisplay--> 
         
-        <div class="rundisplay"><input type = "text" readonly="readonly" size="18" id = "runDis" />
+        <div class="rundisplay"><input type = "text" name="runDisp" readonly="readonly" size="18" id = "runDis" />
         </div><!--/rundisplay--> 
         
-        <div class="crdisplay"><input type = "text" readonly="readonly" size="18" id = "crDis" />
+        <div class="crdisplay"><input type = "text" name="crDisp" readonly="readonly" size="18" id = "crDis" />
         </div><!--/crdisplay--> 
         
-        <div class="jrdisplay"><input type = "text" readonly="readonly" size="18" id = "jrDis" />
+        <div class="jrdisplay"><input type = "text" name="jrDisp" readonly="readonly" size="18" id = "jrDis" />
         </div><!--/jrdisplay--> 
         
-        <div class="hipdisplay"><input type = "text" readonly="readonly" size="18" id = "hipDis" />
+        <div class="hipdisplay"><input type = "text" name="hipDisp" readonly="readonly" size="18" id = "hipDis" />
         </div><!--/hipdisplay-->
+        
+             <input type = "button" class = "black button"  value = "OPEN" onclick = "newHTML()" />
+            <input type = "button" class = "orange button" value = "Close" onclick = "close_Window()"/>
+        </FORM>
     	 
     </div><!--/cuttingList-->
+    
     
 </body>
 </html>
