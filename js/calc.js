@@ -64,7 +64,7 @@ Calculator.prototype.jackRafter = function (hypotenuse)
 	rise = document.getElementById("riseDis").value;
 	run = document.getElementById("runDis").value;
 	hypotenuse = parseFloat(Math.sqrt(run * run + rise * rise)).toFixed(2);
-	var jackRafterValue = hypotenuse - 0.406;
+	var jackRafterValue = hypotenuse - 0.41;
 	document.getElementById("jrDis").value =  jackRafterValue;
 }
 
@@ -74,7 +74,7 @@ Calculator.prototype.hipRafter = function (val)
 	rise = document.getElementById("riseDis").value;
 	run = document.getElementById("runDis").value;
 	hipRafterValue = parseFloat(Math.sqrt(run * run * 2 + rise * rise)).toFixed(2);
-	document.getElementById("hipDis").value = val + ": " + hipRafterValue;
+	document.getElementById("hipDis").value = hipRafterValue;
 }
 
 Calculator.prototype.calcPitch = function ()
@@ -87,42 +87,11 @@ Calculator.prototype.calcPitch = function ()
 	return degrees;
 }
 
-
-
-Calculator.prototype.open_NewWindow = function()
-{
-	//newWindow = window.open('','', 'left=100,top=100,width=300,height=300');
-	window.open('printPage.html','','left=10,top=10,width=200,height=200');
-	//newDocument = newWindow.document;
-	//document.getElementById("body").value = rise;
-	//newDocument.write(rise);
-	// calc.createTHead();
-	//var as = calc.calcPitch();
-	//document.getElementById("sss").value = as;
-}
-
 function close_Window()
 {
 	newWindow.close();
 }
 	
-/*createTHead = function()
-{
-	rise = document.getElementById("riseDis").value;
-    var x=document.getElementById("myTable");
-    if (!x.tHead)
-    {
-       var header=x.createTHead();
-       var row=header.insertRow(0);
-       var cell=row.insertCell(0);
-       cell.innerHTML= "tutuiiu";
-     
-  }
-}
-function deleteTHead()
-{
-document.getElementById("mainform").deleteTHead();
-}*/
 
 function newHTML() {
 
@@ -131,29 +100,29 @@ HTMLstring += '<HEAD>\n';
 HTMLstring += '<TITLE>Stephen doc</TITLE>\n';
 HTMLstring += '<link rel="stylesheet" type="text/css" href="../css/calc.css"/>'
 HTMLstring += '</HEAD>\n';
-HTMLstring += '<BODY>\n';
-HTMLstring += '<table id="myTable" border="1">'
-HTMLstring += '<tr>'
-HTMLstring += '<td>Pitch</td>'
+HTMLstring += '<BODY >\n';
+HTMLstring += '<table class="myTable" border="1">'
+HTMLstring += '<tr class = "oddrowcolor">'
+HTMLstring += '<td >Pitch</td>'
 HTMLstring += '<td> '+mainform.pitchDisp.value+'</td>'
 HTMLstring += '</tr>'
-HTMLstring += '<tr>'
+HTMLstring += '<tr class = "evenrowcolor">'
 HTMLstring += '<td>Rise</td>'
 HTMLstring += '<td>'+mainform.riseDisp.value+'</td>'
 HTMLstring += '</tr>'
-HTMLstring += '<tr>'
+HTMLstring += '<tr class = "oddrowcolor">'
 HTMLstring += '<td>Run</td>'
 HTMLstring += '<td>'+mainform.runDisp.value+'</td>'
 HTMLstring += '</tr>'
-HTMLstring += '<tr>'
+HTMLstring += '<tr class = "evenrowcolor">'
 HTMLstring += '<td>Common Rafter</td>'
 HTMLstring += '<td>'+mainform.crDisp.value+'</td>'
 HTMLstring += '</tr>'
-HTMLstring += '<tr>'
+HTMLstring += '<tr class = "oddrowcolor">'
 HTMLstring += '<td>Hip/Valley</td>'
 HTMLstring += '<td>'+mainform.hipDisp.value+'</td>'
 HTMLstring += '</tr>'
-HTMLstring += '<tr>'
+HTMLstring += '<tr class = "evenrowcolor">'
 HTMLstring += '<td>Jack Rafter</td>'
 HTMLstring += '<td>'+mainform.jrDisp.value+'</td>'
 HTMLstring += '</tr>'
@@ -166,8 +135,8 @@ alert(HTMLstring);
 newwindow=window.open();
 newdocument=newwindow.document;
 newdocument.write(HTMLstring);
-
 }
+
 
 
 var calc = new Calculator();

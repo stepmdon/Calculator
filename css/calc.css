@@ -33,8 +33,7 @@ p
 	width:220px;
 	top:20px;
 	left:15px;
-	height:46px;
-	
+	height:46px;	
 }
 .display input
 {
@@ -48,6 +47,41 @@ p
 	font-size:21px;
 	text-align:right;
 }
+
+.text
+{
+	margin-left:20px;
+	color:#FFF;
+}
+
+.display1
+{
+	position:inherit;
+	background-color:#222;
+	width:80px;
+	top:20px;
+	left:15px;
+	height:26px;
+	margin-right:10px;
+	margin-bottom:10px;
+	
+	float:right;	
+	
+}
+.display1 input
+{
+	position:relative;
+	top:2px;
+	left:2px;
+	background-color:#bccd95;
+	height:15px;
+	width:72px;
+	color:#000;
+	font-size:16px;
+	text-align:right;
+}
+
+
 .btns
 {
 	position:relative;
@@ -135,146 +169,36 @@ p
 	top:10px;
 	background-color:#808080;
 	height:360px;
-	width:220px;
+	width:210px;
 	border-radius:12px;
 	float:left;
 	margin-left:5%;
 	
 }
 
-.pitchdisplay
-{
-	position:relative;
-	background-color:#222;
-	width: 189px;
-	top:20px;
-	left:15px;
-	height:46px;
-	margin-bottom:10px;	
+table.myTable {
+	font-family: verdana,arial,sans-serif;
+	font-size:11px;
+	color:#333333;
+	border-width: 1px;
+	border-color: #a9c6c9;
+	border-collapse:separate;
 }
-
-.pitchdisplay input
-{
-	position:relative;
-	top:2px;
-	left:2px;
-	background-color:#bccd95;
-	height:35px;
-	width:180px;
-	color:#000;
-	font-size:21px;
+table.myTable th {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #a9c6c9;
 }
-
-.risedisplay
-{
-	position:relative;
-	background-color:#222;
-	width: 189px;
-	top:20px;
-	left:15px;
-	height:46px;
-	margin-bottom:10px;	
+table.myTable td {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #a9c6c9;
 }
-
-.risedisplay input
-{
-	position:relative;
-	top:2px;
-	left:2px;
-	background-color:#bccd95;
-	height:35px;
-	width:180px;
-	color:#000;
-	font-size:21px;	
-}	
-
-.rundisplay
-{
-	position:relative;
-	background-color:#222;
-	width: 189px;
-	top:20px;
-	left:15px;
-	height:46px;
-	margin-bottom:10px;	
+.oddrowcolor{
+	background-color:#d4e3e5;
 }
-
-.rundisplay input
-{
-	position:relative;
-	top:2px;
-	left:2px;
-	background-color:#bccd95;
-	height:35px;
-	width:180px;
-	color:#000;
-	font-size:21px;	
-}		
-
-.crdisplay
-{
-	position:relative;
-	background-color:#222;
-	width: 189px;
-	top:20px;
-	left:15px;
-	height:46px;
-	margin-bottom:10px;	
+.evenrowcolor{
+	background-color:#c3dde0;
 }
-
-.crdisplay input
-{
-	position:relative;
-	top:2px;
-	left:2px;
-	background-color:#bccd95;
-	height:35px;
-	width:180px;
-	color:#000;
-	font-size:21px;	
-}		
-.jrdisplay
-{
-	position:relative;
-	background-color:#222;
-	width: 189px;
-	top:20px;
-	left:15px;
-	height:46px;
-	margin-bottom:10px;	
-}
-
-.jrdisplay input
-{
-	position:relative;
-	top:2px;
-	left:2px;
-	background-color:#bccd95;
-	height:35px;
-	width:180px;
-	color:#000;
-	font-size:21px;	
-}			
-	
-.hipdisplay
-{
-	position:relative;
-	background-color:#222;
-	width: 189px;
-	top:20px;
-	left:15px;
-	height:46px;
-	margin-bottom:10px;	
-}
-
-.hipdisplay input
-{
-	position:relative;
-	top:2px;
-	left:2px;
-	background-color:#bccd95;
-	height:35px;
-	width:180px;
-	color:#000;
-	font-size:21px;	
-}			
