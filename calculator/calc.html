@@ -9,22 +9,19 @@
 <title>Roofing Calculator</title>
 </head>
 
-<body>
+<body onload="load()">
 	<h2> ROOFING CALCULATOR</h2>
 	<div class =  "case">
     
     	<div class = "display"><input type = "text" readonly="readonly" size="18" id = "dis" /></div>
         <!--/display-->
         <div class = "btns">
-        	<p><input type = "button" class = "brown button"   value = "Pitch" onclick = "calc.getPitch('Pitch')" />
-               <input type = "button" class = "brown button"   value = "Rise"  onclick = "calc.getRise('Rise')" />
-               <input type = "button" class = "brown button"   value = "Run"   onclick = "calc.getRun('Run')" />
-               <input type = "button" class = "brown button"   value = "Hip"   onclick = "calc.hipRafter('Hip/V')" /></p>
-            
-        	<p><input type = "button" class = "brown button"   value = "C.R" onclick = "calc.commonRafter('C.R')" />
-               <input type = "button" class = "brown button"   value = "J.R"  onclick = "calc.jackRafter('J.R')" />
-               <input type = "button" class = "blue button"   value = "Conv"  onclick = "calc.text('')" />
-               <input type = "button" class = "red button"    value = "/"   onclick = "calc.numeric('/')" /></p>
+        	
+        	<p>
+               <input type = "button" class = "brown button" value = "Rise"  onclick = "calc.getRise('Rise')" />
+               <input type = "button" class = "brown button" value = "Run"   onclick = "calc.getRun('Run')" />
+               <input type = "button" class = "blue button"  value = "Stats"  onclick = "calc.getAll()" />
+               <input type = "button" class = "red button"   value = "/"   onclick = "calc.numeric('/')" /></p>
                
             <p><input type = "button" class = "black button"  value = "7" onclick = "calc.numeric('7')" />
                <input type = "button" class = "black button"  value = "8" onclick = "calc.numeric('8')" />
@@ -45,46 +42,57 @@
             <p><input type = "button" class = "black button"  value = "0" onclick = "calc.numeric('0')" />
                <input type = "button" class = "black button"  value = "." onclick = "calc.numeric('.')" />
                <input type = "button" class = "black button"  value = "C" onclick = "calc.text('')" />
-               <input type = "button" class = "orange button" value = "=" onclick = "calc.equals()"/>                   	
+               <input type = "button" class = "orange button" value = "=" onclick = "calc.equals()"/></p>
+               
+            <p><input type = "button" class = "yellow button"  value = "Print Preview" onclick = "newHTML()" />
+               <input type = "button" class = "yellow button" value = "Close" onclick = "saveSession()"/></p>                   	
         </div><!--/btns-->
     </div><!--/case-->
     
     <div class = "cuttingList">
     	 <FORM NAME="mainform">
-            	                  
-    	<div class="display1"><input type = "text" name="pitchDisp" readonly="readonly" size="18" id = "pitchDis" />
-        </div><!--/pitchdisplay--> 
+                                 
+       	    <div class="display1"><input type = "text" name="riseDisp" readonly="readonly" size="18" id = "riseDis" />
+        	</div><!--/display1--> 
         
-        <div class="text"><h3>Pitch</h3></div>
+       	    <div class="text"><h3>Rise</h3></div><!--/text-->           
         
-        <div class="display1"><input type = "text" name="riseDisp" readonly="readonly" size="18" id = "riseDis" />
-        </div><!--/risedisplay--> 
+            <div class="display1"><input type = "text" name="runDisp" readonly="readonly" size="18" id = "runDis" />
+            </div><!--/display1-->
+            
+            <div class="text"><h3>Run</h3></div><!--/text--> 
+            
+            <div class="display1"><input type = "text" name="pitchDisp" readonly="readonly" size="18" id = "pitchDis" />
+       		</div><!--/display1--> 
         
-        <div class="text"><h3>Rise</h3></div>
+       	    <div class="text"><h3>Pitch</h3></div><!--/text-->          
         
-        <div class="display1"><input type = "text" name="runDisp" readonly="readonly" size="18" id = "runDis" />
-        </div><!--/rundisplay--> 
+            <div class="display1"><input type = "text" name="crDisp" readonly="readonly" size="18" id = "crDis" />
+            </div><!--/display1-->
         
-        <div class="text"><h3>Run</h3></div>
+            <div class="text"><h3>Common</h3></div><!--/text--> 
         
-        <div class="display1"><input type = "text" name="crDisp" readonly="readonly" size="18" id = "crDis" />
-        </div><!--/crdisplay-->
+            <div class="display1"><input type = "text" name="jrDisp" readonly="readonly" size="18" id = "jrDis" />
+            </div><!--/display1--> 
         
-        <div class="text"><h3>Common</h3></div> 
-        
-        <div class="display1"><input type = "text" name="jrDisp" readonly="readonly" size="18" id = "jrDis" />
-        </div><!--/jrdisplay--> 
-        
-        <div class="text"><h3>Jack</h3></div>
+            <div class="text"><h3>Jack</h3></div><!--/text-->
          
-        <div class="display1"><input type = "text" name="hipDisp" readonly="readonly" size="18" id = "hipDis" />
-        </div><!--/hipdisplay-->
+            <div class="display1"><input type = "text" name="hipDisp" readonly="readonly" size="18" id = "hipDis" />
+            </div><!--/display1-->
         
-        <div class="text"><h3>Hip/Valley</h3></div>
+            <div class="text"><h3>Hip/Valley</h3></div><!--/text-->
+            
+            <div class="display1"><input type = "text" name="plumDisp" readonly="readonly" size="18" id = "plumDis" />
+            </div><!--/display1-->
         
-             <input type = "button" class = "black button"  value = "OPEN" onclick = "newHTML()" />
-            <input type = "button" class = "orange button" value = "Close" onclick = "close_Window()"/>
-        </FORM>
+            <div class="text"><h3>Plum Cut</h3></div><!--/text-->
+            
+            <div class="display1"><input type = "text" name="seatDisp" readonly="readonly" size="18" id = "seatDis" />
+            </div><!--/display1-->
+        
+            <div class="text"><h3>Seat Cut</h3></div><!--/text-->           
+            
+        </FORM><!--/form-->
     	 
     </div><!--/cuttingList-->
     

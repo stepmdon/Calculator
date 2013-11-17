@@ -154,9 +154,27 @@ p
 	background-color:#ff9933;
 	border-bottom:#000 3px solid;
 	border-top:#ff9933;
+
 }
 
 .orange:active
+{
+	border-top:#000 3px solid;
+	border-bottom:#ff9933 3px solid;
+}
+
+.yellow.button
+{
+	color:#000;
+	background-color:#ff9933;
+	border-bottom:#000 3px solid;
+	border-top:#ff9933;
+	width:100px;
+	height:30px;
+
+}
+
+.yellow:active
 {
 	border-top:#000 3px solid;
 	border-bottom:#ff9933 3px solid;
