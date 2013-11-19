@@ -43,14 +43,20 @@
                <input type = "button" class = "black button"  value = "." onclick = "calc.numeric('.')" />
                <input type = "button" class = "black button"  value = "C" onclick = "calc.text('')" />
                <input type = "button" class = "orange button" value = "=" onclick = "calc.equals()"/></p>
-               
-            <p><input type = "button" class = "yellow button"  value = "Print Preview" onclick = "newHTML()" />
-               <input type = "button" class = "yellow button" value = "Close" onclick = "saveSession()"/></p>                   	
+             
+            <p><input type = "button" class = "bigBlue button" value = "Convert" onclick = "convert()"/>
+               <input type = "button" class = "bigBlue button" value = "Clear All" onclick = "calc.clear()"/></p> 
+             
+            <p><input type = "button" class = "bigOrange button"  value = "Print Preview" onclick = "newHTML()" />
+               <input type = "button" class = "bigOrange button" value = "Close Preview" onclick = "saveSession()"/></p>                   	
         </div><!--/btns-->
     </div><!--/case-->
     
     <div class = "cuttingList">
     	 <FORM NAME="mainform">
+         	 <div class="display1"><input type = "text" name="jobDisp"  size="18" id = "jobDis" />
+        	</div><!--/display1-->
+             <div class="text"><h3>Job</h3></div><!--/text-->
                                  
        	    <div class="display1"><input type = "text" name="riseDisp" readonly="readonly" size="18" id = "riseDis" />
         	</div><!--/display1--> 

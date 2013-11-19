@@ -1,9 +1,10 @@
 // JavaScript Document
+var calc = new Calculator();
+
 function Calculator()
 {
 	this.rise = 0;
-	this.run = 0;
-	 
+	this.run = 0;	 
 	this.hypotenuse = 0; 
 }
 
@@ -44,7 +45,7 @@ Calculator.prototype.getAll = function ()
 	
 	var hipValue = calc.hipRafter();
 	
-	var jackRafter = calc.jackRafter();
+	//var jackRafter = calc.jackRafter();
 	
 	var seatValue = calc.calcSeat();
 	document.getElementById("seatDis").value = seatValue ;
@@ -52,26 +53,32 @@ Calculator.prototype.getAll = function ()
 	var plumValue = calc.calcPlumCut();
 	document.getElementById("plumDis").value = plumValue ;
 	
-	var pitchValue = calc.calcPitch();
-	document.getElementById("pitchDis").value = pitchValue ;	
+	var jackRafter = calc.jackRafter();
+	
+	var pitchVal = calc.calcPitch();	
+	document.getElementById("pitchDis").value = pitchVal ;
+		
 }
 
 Calculator.prototype.getRise = function (val)
 {
 	var riseValue = document.getElementById("dis").value
 	document.getElementById("riseDis").value =  riseValue;
+	document.getElementById("dis").value =  "";
 }
 
 Calculator.prototype.getRun = function (val)
 {
 	var runValue = document.getElementById("dis").value
 	document.getElementById("runDis").value = runValue;
+	document.getElementById("dis").value =  "";
 }
 
 Calculator.prototype.getPitch = function (val)
 {
-	var pitchValue = document.getElementById("dis").value
-	document.getElementById("pitchDis").value = pitchValue;
+	
+	var pitchVal = calc.calcPitch();
+	document.getElementById("pitchDis").value = pitchVal ;	
 }
 
 Calculator.prototype.commonRafter = function ()//removed val
@@ -85,18 +92,20 @@ Calculator.prototype.commonRafter = function ()//removed val
 	return hypotenuse
 }
 
-Calculator.prototype.jackRafter = function ()
-{
-	rise = document.getElementById("riseDis").value;
-	run = document.getElementById("runDis").value;
-	hypotenuse = parseFloat(Math.sqrt(run * run + rise * rise)).toFixed(2);
-	
-	var jackRafterValue = hypotenuse - 0.4; 
-	document.getElementById("jrDis").value =  jackRafterValue;
-	return jackRafterValue;
+function roundToTwo(value) {
+  
 }
 
+Calculator.prototype.jackRafter = function ()
+{
 
+	seatValue  = document.getElementById("seatDis").value;
+	var angle3 = 180 - 90 - seatValue;
+	jackRafterValue = parseFloat(Math.tan(seatValue)) * 0.4;
+	document.getElementById("jrDis").value = (Math.round(jackRafterValue * 100) / 100);
+	
+	return(Math.round(jackRafterValue * 100) / 100);
+}
 
 Calculator.prototype.hipRafter = function ()
 {			
@@ -126,60 +135,208 @@ Calculator.prototype.calcPlumCut = function ()
 
 Calculator.prototype.calcPitch = function ()
 {
+	
 	var angle =  document.getElementById("seatDis").value;
-	if (angle > 0  && angle <= 4.5)
-	{
-		document.getElementById("pitchDis").value = 1;
+	
+	var output;
+	
+	if (angle <= 4.5)
+	{		
+		output = 1;
 	}
 	else if (angle <= 9.5)
 	{
-		document.getElementById("pitchDis").value = 2;
+		output = 2;
 	}
 	else if (angle <= 14)
 	{
-		document.getElementById("pitchDis").value = 3;
+		output = 3;
 	}
 	else if (angle <= 18.5)
 	{
-		document.getElementById("pitchDis").value = 4;
+		output = 4;
 	}
 	else if (angle <= 22.5)
 	{
-		document.getElementById("pitchDis").value = 5;
+		output = 5;
 	}
 	else if (angle <= 26.5)
 	{
-		document.getElementById("pitchDis").value = 6;
+		output = 6;
 	}
 	else if (angle <= 30.5)
 	{
-		document.getElementById("pitchDis").value = 7;
+		output = 7;
 	}
 	else if (angle <= 33.75)
 	{
-		document.getElementById("pitchDis").value = 8;
+		output = 8;
 	}
 	else if (angle <= 37)
 	{
-		document.getElementById("pitchDis").value = 9;
+		output = 9;
 	}
 	else if (angle <= 40)
 	{
-		document.getElementById("pitchDis").value = 10;
+		output = 10;
 	}
 	else if (angle <= 42.5)
 	{
-		document.getElementById("pitchDis").value = 11;
+		output = 11;
 	}
 	else if (angle <= 45)
 	{
-		document.getElementById("pitchDis").value = 12;
+		output = 12;
+	}
+	else if (angle <= 47.29)
+	{
+		output = 13;
+	}
+	else if (angle <= 49.4)
+	{
+		output = 14;
+	}
+	else if (angle <= 51.34)
+	{
+		output = 15;
+	}
+	else if (angle <= 53.13)
+	{
+		output = 16;
+	}
+	else if (angle <= 54.78)
+	{
+		output = 17;
+	}
+	else if (angle <= 56.31)
+	{
+		output = 18;
+	}
+	else if (angle <= 57.72)
+	{
+		output = 19;
+	}
+	else if (angle <= 59.04)
+	{
+		output = 20;
+	}
+	else if (angle <= 60.26)
+	{
+		output = 21;
+	}
+	else if (angle <= 61.39)
+	{
+		output = 22;
+	}
+	else if (angle <= 62.45)
+	{
+
+		output = 23;
+	}
+	else if (angle <= 63.43)
+	{
+		output = 24;
+	}
+	else if(angle < 0 || angle > 63.44)
+	{
+
+		document.getElementById("pitchDis").value = "ERROR";
 	}
 	
-	return parseInt(angle);
+	return (output);
+
 }
 
+Calculator.prototype.clear = function ()
+{
+	document.getElementById("jobDis").value = "";
+	document.getElementById("riseDis").value = 0;
+	document.getElementById("runDis").value = 0;
+	document.getElementById("pitchDis").value = 0;
+	document.getElementById("crDis").value = 0;
+	document.getElementById("jrDis").value = 0;
+	document.getElementById("hipDis").value = 0;
+	document.getElementById("plumDis").value = 0;
+	document.getElementById("seatDis").value = 0;
+	document.getElementById("dis").value = "";
+	
+}
 
+function convertCmToInches(meters)
+{
+	//Convert meters to cm
+	var cm = meters * 100;
+	//convert cm to inches
+	var inches = cm / 2.54;
+	var integerPart = parseInt(inches);
+	
+	return integerPart;
+}
+function getFraction(meters, baseNumber )
+{
+	//Convert meters to cm
+	var cm = meters * 100;
+	//convert cm to inches
+	var inches = cm / 2.54;
+	//get the whole inches part
+	var integerPart = parseInt(inches);
+	//get the fraction part in decimal
+	var fractionPart = inches - integerPart;
+	//get the number of fraction parts i.e divide for base 16.. i want 16ths
+	var fraction = parseInt( fractionPart / (1 / baseNumber));
+	
+	//roun to the closest value
+	if (Math.abs(fraction * 1 / baseNumber - fractionPart) > 0.49 * 1 / baseNumber)
+	{
+		fraction++;
+	}
+	
+	if(fraction == 16)
+	{
+		fraction = 0;
+		integerPart++;
+	}
+		
+	
+	return fraction;
+}
+
+function hello()
+{
+	alert("Hello");
+}
+
+function convert()
+{
+	var impPitch = document.getElementById("pitchDis").value
+	rise = document.getElementById("riseDis").value
+	var newIntRise = convertCmToInches(rise);
+	var newFracRise = getFraction(rise, 16);
+	document.getElementById("riseDis").value = newIntRise + " & " + newFracRise + "/16";
+	
+	run = document.getElementById("runDis").value
+	var newIntRun = convertCmToInches(run);
+	var newFracRun = getFraction(run, 16);
+	document.getElementById("runDis").value = newIntRun + " & " + newFracRun + "/16";
+	
+	common = document.getElementById("crDis").value
+	var newIntCommon = convertCmToInches(common);
+	var newFracCommon = getFraction(common, 16);
+	document.getElementById("crDis").value = newIntCommon + " & " + newFracCommon + "/16";
+	
+	jack = document.getElementById("jrDis").value
+	var newIntJack = convertCmToInches(jack);
+	var newFracJack = getFraction(jack, 16);
+	document.getElementById("jrDis").value = newIntJack + " & " + newFracJack + "/16";
+	
+	hip = document.getElementById("hipDis").value
+	var newIntHip = convertCmToInches(hip);
+	var newFracHip = getFraction(hip, 16);
+	document.getElementById("hipDis").value = newIntHip + " & " + newFracHip + "/16";
+	
+	document.getElementById("pitchDis").value = impPitch;
+		
+}
 
 function close_Window()
 {
@@ -188,63 +345,63 @@ function close_Window()
 	
 
 function newHTML()
- {
+{
+	HTMLstring  = '<html>\n';
+	HTMLstring += '<head>\n';
+	HTMLstring += '<title>Stephen doc</title>\n';
+	/*HTMLstring += '<script type="text/javascript" src="../js/calc.js"></script>'*/
+	HTMLstring += '<link rel="stylesheet" type="text/css" href="../css/calc.css"/>';
+	HTMLstring += '<script>setTimeout("window.close()",120000) </script> ';
+	HTMLstring += '</head>\n';
+	HTMLstring += '<body >\n';
+	HTMLstring += '<div class= "ooo">';
+	HTMLstring += '<input type = "button" class = "bigBlue button" value = "Print Page"  onclick = "print()"/>';
+	HTMLstring += '</div>';
+	HTMLstring += '<table class="myTable" border="1">';
+	HTMLstring += '<tr class = "oddrowcolor">';
+	HTMLstring += '<td>Job</td>';
+	HTMLstring += '<td>'+mainform.jobDisp.value+'</td>'
+	HTMLstring += '</tr>';
+	HTMLstring += '<tr class = "evenrowcolor">';
+	HTMLstring += '<td>Rise</td>';
+	HTMLstring += '<td class = "riseValue">'+mainform.riseDisp.value+'</td>';
+	HTMLstring += '</tr>';
+	HTMLstring += '<tr class = "oddrowcolor">';
+	HTMLstring += '<td>Run</td>';
+	HTMLstring += '<td>'+mainform.runDisp.value+'</td>'
+	HTMLstring += '</tr>';
+	HTMLstring += '<tr class = "evenrowcolor">';
+	HTMLstring += '<td>Pitch</td>';
+	HTMLstring += '<td>'+mainform.pitchDisp.value+' / 12</td>';
+	HTMLstring += '</tr>'
+	HTMLstring += '<tr class = "oddrowcolor">'
+	HTMLstring += '<td>Common Rafter</td>'
+	HTMLstring += '<td>'+mainform.crDisp.value+ '</td>'
+	HTMLstring += '</tr>';
+	HTMLstring += '<tr class = "evenrowcolor">';
+	HTMLstring += '<td>Jack Rafter</td>';
+	HTMLstring += '<td>'+mainform.jrDisp.value+'</td>';
+	HTMLstring += '</tr>';
+	HTMLstring += '<tr class = "oddrowcolor">';
+	HTMLstring += '<td>Hip/Valley</td>';
+	HTMLstring += '<td>'+mainform.hipDisp.value+'</td>';
+	HTMLstring += '</tr>';
+	HTMLstring += '<tr class = "evenrowcolor">';
+	HTMLstring += '<td>Plum Cut</td>';
+	HTMLstring += '<td>'+mainform.plumDisp.value+' &#176</td>';
+	HTMLstring += '</tr>';
+	HTMLstring += '<tr class = "oddrowcolor">';
+	HTMLstring += '<td >Seat Cut</td>';
+	HTMLstring += '<td> '+mainform.seatDisp.value+' &#176</td>';
+	HTMLstring += '</tr>';
+	HTMLstring += '</table>';
+	HTMLstring += '<br>';
+	HTMLstring += '</body>\n';
+	HTMLstring += '</html>';
 
-
-HTMLstring  = '<html>\n';
-HTMLstring += '<head>\n';
-HTMLstring += '<title>Stephen doc</title>\n';
-HTMLstring += '<link rel="stylesheet" type="text/css" href="../css/calc.css"/>'
-HTMLstring +='<script>setTimeout("window.close()",120000) </script> '
-HTMLstring += '</head>\n';
-HTMLstring += '<body >\n';
-HTMLstring += '<div class= "ooo">'
-HTMLstring += '<input type = "button" class = "orange button" value = "Print" onclick = "print()"/>'
-HTMLstring += '<input type = "button" class = "orange button" value = "Save" onclick = "storage()"/>'
-HTMLstring += '<input type = "button" class = "orange button" value = "Load" onclick = "storage()"/>'
-HTMLstring += '</div>'
-HTMLstring += '<table class="myTable" border="1">'
-HTMLstring += '<tr class = "evenrowcolor">'
-HTMLstring += '<td>Rise</td>'
-HTMLstring += '<td>'+mainform.riseDisp.value+' meters</td>'
-HTMLstring += '</tr>'
-HTMLstring += '<tr class = "oddrowcolor">'
-HTMLstring += '<td>Run</td>'
-HTMLstring += '<td>'+mainform.runDisp.value+' meters</td>'
-HTMLstring += '</tr>'
-HTMLstring += '<tr class = "evenrowcolor">'
-HTMLstring += '<td>Pitch</td>'
-HTMLstring += '<td>'+mainform.pitchDisp.value+' / 12</td>'
-HTMLstring += '</tr>'
-HTMLstring += '<tr class = "oddrowcolor">'
-HTMLstring += '<td>Common Rafter</td>'
-HTMLstring += '<td>'+mainform.crDisp.value+ ' meters</td>'
-HTMLstring += '</tr>'
-HTMLstring += '<tr class = "evenrowcolor">'
-HTMLstring += '<td>Jack Rafter</td>'
-HTMLstring += '<td>'+mainform.jrDisp.value+' meters</td>'
-HTMLstring += '</tr>'
-HTMLstring += '<tr class = "oddrowcolor">'
-HTMLstring += '<td>Hip/Valley</td>'
-HTMLstring += '<td>'+mainform.hipDisp.value+' meters</td>'
-HTMLstring += '</tr>'
-HTMLstring += '<tr class = "evenrowcolor">'
-HTMLstring += '<td>Plum Cut</td>'
-HTMLstring += '<td>'+mainform.plumDisp.value+' &#176</td>'
-HTMLstring += '</tr>'
-HTMLstring += '<tr class = "oddrowcolor">'
-HTMLstring += '<td >Seat Cut</td>'
-HTMLstring += '<td> '+mainform.seatDisp.value+' &#176</td>'
-HTMLstring += '</tr>'
-HTMLstring += '</table>'
-HTMLstring += '<br>'
-HTMLstring += '</body>\n';
-HTMLstring += '</html>';
-alert(HTMLstring);
-
-newWindow=window.open('','', 'left=100,top=100,width=240,height=300');
-newDocument=newWindow.document;
-newDocument.write(HTMLstring);
+	newWindow=window.open('','', 'left=100,top=100,width=270,height=350');
+	newDocument=newWindow.document;
+	newDocument.write(HTMLstring);
 }
 
 function print()
@@ -290,7 +447,8 @@ function saveSession()
 function load()
 {	
 var myStorage=window.localStorage 
-if (localStorage){
+if (localStorage)
+{
     var i=(localStorage.pagecount)? parseInt(localStorage.pagecount)+1 : 1;//this line not my own code
 		
 	if(localStorage.pagecount >= 1)
@@ -317,9 +475,9 @@ if (localStorage){
 	}
     localStorage.pagecount=i;
 }
-else{
+else
+{
    alert("Your browser doesn't support DOM Storage unfortunately.")
 }
 	
 }
-var calc = new Calculator();

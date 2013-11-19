@@ -19,9 +19,9 @@ p
 {
 	position:relative;
 	top:10px;
-	margin-left:27%;
+	margin-left:21%;
 	background-color:#808080;
-	height:360px;
+	height:405px;
 	width:250px;
 	border-radius:12px;
 	float:left;
@@ -58,10 +58,10 @@ p
 {
 	position:inherit;
 	background-color:#222;
-	width:80px;
+	width:130px;
 	top:20px;
 	left:15px;
-	height:26px;
+	height:27px;
 	margin-right:10px;
 	margin-bottom:10px;
 	
@@ -74,11 +74,11 @@ p
 	top:2px;
 	left:2px;
 	background-color:#bccd95;
-	height:15px;
-	width:72px;
+	height:16px;
+	width:122px;
 	color:#000;
 	font-size:16px;
-	text-align:right;
+	text-align:left;
 }
 
 
@@ -116,11 +116,28 @@ p
 	border-bottom:#000 3px solid;
 	border-top:#0276FD 3px solid;
 }
-.gray:active
+.blue:active
 {
 	border-top:#000 3px solid;
-	border-bottom:#6f6f6f 3px solid;
+	border-bottom:#0276FD 3px solid;
 }
+
+.bigBlue.button
+{
+	color:#FFF;
+	background-color:#0276FD;
+	border-bottom:#000 3px solid;
+	border-top:#0276FD 3px solid;
+	width:100px;
+	height:30px;
+}
+.bigBlue:active
+{
+	border-top:#000 3px solid;
+	border-bottom:#0276FD 3px solid;
+}
+
+
 .red.button
 {
 	color:#000;
@@ -163,7 +180,7 @@ p
 	border-bottom:#ff9933 3px solid;
 }
 
-.yellow.button
+.bigOrange.button
 {
 	color:#000;
 	background-color:#ff9933;
@@ -174,7 +191,7 @@ p
 
 }
 
-.yellow:active
+.bigOrange:active
 {
 	border-top:#000 3px solid;
 	border-bottom:#ff9933 3px solid;
@@ -186,12 +203,11 @@ p
 	position:relative;
 	top:10px;
 	background-color:#808080;
-	height:360px;
-	width:210px;
+	height:405px;
+	width:280px;
 	border-radius:12px;
 	float:left;
 	margin-left:5%;
-	
 }
 
 table.myTable {
@@ -201,6 +217,7 @@ table.myTable {
 	border-width: 1px;
 	border-color: #a9c6c9;
 	border-collapse:separate;
+	margin-top:30px
 }
 table.myTable th {
 	border-width: 1px;
